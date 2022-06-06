@@ -51,14 +51,17 @@ def scrollbar(root):
         csum=float(csum)
         csum=str(csum*values[c4])
         csum=float(csum)
-        if csum>=1000:
+        if 1000<csum<999999:
             csum=str(csum/1000)
             csum=str(csum)+"K"
 
         elif csum>=1000000:
             csum=str(csum/1000000)
             csum=str(csum)+"M"
-            
+
+        else:
+            csum=str(csum)
+
         csum=str(csum)+" Ω"+"\n"+str(values2[c5])
         
         def resultado(csum):
