@@ -23,16 +23,35 @@ def scrollbar(root):
             Label(root,text="",bg=color2,height=2,width=3).place(x=100+50,y=120)
             c2=list2['values'].index(list2.get())
 
+        color3=str(list3.get())
+
+        if list3!= 0:
+            Label(root,text="",bg=color3,height=2,width=3).place(x=100+100,y=120)
+            c3=list3['values'].index(list3.get())
+
+
+
+
+        
+
         color4=str(list4.get())
         if list4!= 0:
-            Label(root,text="",bg=color4,height=2,width=3).place(x=100+100,y=120)
-            c3=list4['values'].index(list4.get())
-            values=[1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000]
+            Label(root,text="",bg=color4,height=2,width=3).place(x=270,y=120)
+            c4=list4['values'].index(list4.get())
+            values=[1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,0.1,0.01]
+
+        color5=str(list5.get())
+        if list5!= 0:
+            Label(root,text="",bg=color5,height=2,width=3).place(x=270+50,y=120)
+            c5=list5['values'].index(list5.get())
+            values2=["1%","2%","4%","0.5%","0.25%","0.1%","0.05%","5%","10%"]
 
         csum=str(c1)+str(c2)
-        csum=int(csum)
-        csum=str(csum*values[c3])
-        csum=int(csum)
+        csum=csum+str(c3)
+        csum=float(csum)
+        csum=str(csum*values[c4])
+        csum=float(csum)
+        csum=str(csum)+"\n"+str(values2[c5])
         def resultado(csum):
             Label(root,text="Resultado: "+str(csum),bg="white",height=2,width=20).place(x=10,y=300)
 
@@ -68,21 +87,30 @@ def scrollbar(root):
     # get first 3 letters of every month name
     list1['values'] = ('Black', 'Brown','Red','Orange','Yellow' ,'Green','Blue','Violet','Gray','White')
     list2=ttk.Combobox(root, values=["Black","Brown","Red","Orange","Yellow","Green","Blue","Violet","Gray","White"],width=10)
+    list3=ttk.Combobox(root, values=["Black","Brown","Red","Orange","Yellow","Green","Blue","Violet","Gray","White"],width=10)
 
-    list4=ttk.Combobox(root, values=["Black","Brown","Red","Orange","Yellow","Green","Blue","Violet","Gray","White"],width=10)
+    list4=ttk.Combobox(root, values=["Black","Brown","Red","Orange","Yellow","Green","Blue","Violet","Gray","White","Gold","Silver"],width=10)
+
+    list5=ttk.Combobox(root, values=["Brown","Red","Yellow","Green","Blue","Violet","Gray","Gold","Silver"],width=10)
     # prevent typing a value
     list1['state'] = 'readonly'
     list2['state'] = 'readonly'
+    list3['state'] = 'readonly'
     list4['state'] = 'readonly'
+    list5['state'] = 'readonly'
     list1.current(0)
     list2.current(0)
+    list3.current(0)
     list4.current(0)
+    list5.current(0)
     
 
     # place the widget
     list1.place(x=10, y=200)
     list2.place(x=100, y=200)
-    list4.place(x=200, y=200)
+    list3.place(x=190, y=200)
+    list4.place(x=300, y=200)
+    list5.place(x=400, y=200)
     Button(root, text="Cambiar", command=cambiar).place(x=10, y=250)
     
     
