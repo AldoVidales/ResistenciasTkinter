@@ -6,6 +6,7 @@ from app import app
    
 root = Tk()
 root.title("Calculadora de resistencias")
+root.iconbitmap('icon.ico')
 root.geometry('600x400+50+50')
 root.resizable(False, False)
 root.configure(background="#E5DAB2")
