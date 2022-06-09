@@ -11,11 +11,11 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
         return os.path.join(base_path, relative_path)
 
-icon=resource_path('.\icon.ico')
+
 def credits():
    filewin = Toplevel()
    filewin.geometry('200x200')
-
+   icon=resource_path('icon.ico')
    
    filewin.iconbitmap(icon)
    
@@ -25,6 +25,7 @@ def credits():
 
 def help():
    filewin2 = Toplevel()
+   icon=resource_path('icon.ico')
    filewin2.iconbitmap(icon)
    filewin2.geometry('200x200')
    filewin2.resizable(False, False)

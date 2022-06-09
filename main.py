@@ -7,10 +7,10 @@ from app import app
 
 
 
-icon=resource_path('.\icon.ico')
+
 root = Tk()
 root.title("Calculadora de resistencias")
-
+icon=resource_path('icon.ico')
 root.iconbitmap(icon)
 root.geometry('600x400+50+50')
 root.resizable(False, False)
