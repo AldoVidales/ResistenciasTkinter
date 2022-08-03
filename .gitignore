@@ -1,3 +1,4 @@
 dist/
 Color_resistor.egg-info/
 build/
+setup.py
